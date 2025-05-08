@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="CVW, Child Protection, Web3, Stop Child Abuse, CVW Token, NFT, DAO, Metamask, Support, Snapshot, Decentralized">
+    <meta name="description" content="Join the decentralized global movement to protect children with CVW Token. Support, vote, and connect through Web3.">
+    <title>Stop Child Abuse | CVW Web3 Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        header, section, footer {
+            padding: 40px 20px;
+        }
+        img.logo {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        .button {
+            background-color: #00ffcc;
+            color: black;
+            padding: 12px 24px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #00ccaa;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+    <img src="logo1.png" alt="Stop Child Abuse Logo" class="logo">
+    <h1>Join the Movement. Stop Child Abuse with CVW Token.</h1>
+    <p>A decentralized mission to protect every child, everywhere.</p>
+</header>
+
+<section>
+    <img src="logo2.png" alt="CVW Coin Logo" class="logo">
+    <h2>What is CVW Token?</h2>
+    <p>CVW Token is a symbol of empathy and commitment. It empowers supporters across the world to join our child protection mission with transparency and trust.</p>
+</section>
+
+<section>
+    <h2>Support with NFTs & Vote with DAO</h2>
+    <p>Empathy NFTs coming soon!</p>
+    <p>Participate in global decisions through CVW's decentralized voting system. <br>(Snapshot integration coming soon)</p>
+</section>
+
+<section>
+    <h2>Connect Your Wallet</h2>
+    <button class="button" onclick="connectWallet()">Connect MetaMask</button>
+    <p id="wallet-address"></p>
+</section>
+
+<footer>
+    <h3>Contact</h3>
+    <p>Representative: NOBUSHI</p>
+    <p>Email: cvwjapaninfo@gmail.com</p>
+</footer>
+
+<script>
+    async function connectWallet() {
+        if (window.ethereum) {
+            try {
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                document.getElementById('wallet-address').innerText = "Connected wallet: " + accounts[0];
+            } catch (error) {
+                console.error("Connection failed:", error);
+                alert("Failed to connect wallet.");
+            }
+        } else {
+            alert("MetaMask is not installed. Please install it to use this feature.");
+        }
+    }
+</script>
+
+</body>
+</html>
